@@ -61,13 +61,23 @@ namespace OOP2
             //handeler_pers.Age = -1;
 
             Horse horse = new Horse("Zorro", 800, 8, "Galopp");
+            Dog dog = new("Lassie", 50, 24, 8);
+            Hedgehog hedgehog = new("Phil", 25, 5, "Waggle");
+            Worm worm = new("Tjernobyl", 25, 38, true);
+            Bird bird = new("Parrot", 12, 24, true);
+            Wolf wolf = new("Fenrir",12,24,false);
 
+            //3.2.7, Array med Animals kanske
             var result = new StringBuilder();
             result.AppendLine(horse.DoSound());
             Console.WriteLine(result);
+            //3.2.8
+
+            Pelican pelican = new("Seaborn", 12, 24, true, false);
+            Flamingo flamingo = new("Pink", 12, 24, true, false);
+            Swan swan = new("Dive", 12, 24, true, true);
 
 
-            
         }
     }
 }

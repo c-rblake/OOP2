@@ -17,8 +17,9 @@
         }
 
         //public Horse() : this("DefaultBrandName", 100, 256) { }
+        //horse.DoSound() Inte alls så enkelt. 
 
-        //horse.DoSound()
+        
 
 
 

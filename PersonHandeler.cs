@@ -16,6 +16,25 @@ namespace OOP2
             return pers;
         }
 
+        internal void SetFName(Person person, string v)
+        {
+            person.FName = v;
+        }
+
+        internal void SetLName(Person person, string v)
+        {
+            person.LName = v;
+        }
+
+        internal void SetHeight(Person person, double v)
+        {
+            person.Height = v;
+        }
+
+        internal void SetWeight(Person person, double v)
+        {
+            person.Weight = v;
+        }
     }
 
 

@@ -8,7 +8,7 @@ namespace OOP2
         private int age;
         private string fName;
         private string lName;
-        public int Age {
+        public int Age { // person.Age =>
             get { return age; }
             set { 
                 if(value < 0)
@@ -20,7 +20,7 @@ namespace OOP2
         }
 
         //[Required]
-        //[MinLength(2, ErrorMessage ="Name cannot be less than 2")]
+        //[MinLength(2, ErrorMessage ="Name cannot be less than 2")] inte ArgumentException
         //[MaxLength(10, ErrorMessage="Name cannot be greater than 10")]
         //public string FName {
         //    get { return fName; }

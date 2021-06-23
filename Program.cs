@@ -1,9 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 namespace OOP2
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
@@ -19,17 +20,17 @@ namespace OOP2
 
             // CANNOT BE CREATED
             Person person3 = new Person("Hat", "Pot");
-            try
-            {
-                Console.WriteLine("Enter a name: ");
-                person3.FName = Console.ReadLine();
-                //person3.FName = "Harry";
-                Console.WriteLine(person3.ToString());
-            }
-            catch (ArgumentException e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            //try
+            //{
+            //    Console.WriteLine("Enter a name: ");
+            //    person3.FName = Console.ReadLine();
+            //    //person3.FName = "Harry";
+            //    Console.WriteLine(person3.ToString());
+            //}
+            //catch (ArgumentException e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
             
 
             person2.FName = "Lars";
@@ -50,13 +51,28 @@ namespace OOP2
 
             Console.WriteLine(handeler_pers.ToString());
 
+            //handler.SetFName(Person, string); // MAKE EVENT? 
+            handler.SetLName(handeler_pers, "Åkesson");
+            handler.SetHeight(handeler_pers, 180.4);
+            handler.SetWeight(handeler_pers, 77.8);
+            handler.SetFName(handeler_pers, "Åke");
+
+            Console.WriteLine(handeler_pers.ToString());
+            //handeler_pers.Age = -1;
+
+            Horse horse = new Horse("Zorro", 800, 8, "Galopp");
+
+            var result = new StringBuilder();
+            result.AppendLine(horse.DoSound());
+            Console.WriteLine(result);
 
 
+            
         }
     }
 }
 /*
-I Övning 3.2 ber vi er skapa ett gränssnitt (interface) som heter Person.
+I Övning 3.2 ber vi er skapa ett gränssnitt (interface) som heter Person. DET KOLLIDERAR MED PERSON.CS såkmlart.
     Om ni lägger det i samma projekt som ni gjorde Person-klassen 3.1 så kommer 
     ni få error för att de har samma namn. Döp då gränssnittet till något annat (typ IPerson) 
     så funkar det. Ett gränssnitt/interface kan alltså inte ha samma namn som en annan klass.

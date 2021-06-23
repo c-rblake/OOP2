@@ -9,5 +9,15 @@ namespace OOP2
             pers.Age = age;
             Console.WriteLine("PersonHandeler: " + pers.ToString());
         }
+        public Person CreatePerson(int age, string fname, string lname, double height, double weight)
+        {
+            Person pers = new Person(fname, lname, age, height, weight);
+
+            return pers;
+        }
+
     }
+
+
+
 }

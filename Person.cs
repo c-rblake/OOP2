@@ -7,6 +7,7 @@ namespace OOP2
     {
         private int age;
         private string fName;
+        private string lName;
         public int Age {
             get { return age; }
             set { 
@@ -55,7 +56,6 @@ namespace OOP2
                 }
             }
         }
-        private string lName;
 
         public string LName
         {
@@ -76,10 +76,36 @@ namespace OOP2
                 }
             }
         }
+        private double height;
+        public double Height
+        {
+            get { return height; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Invalid Height. Enter an int greater than 0.");
+                }
+                this.height = value;
+            }
 
+        }
 
-        private double Height;
-        private double Weight;
+        private double weight;
+
+        public double Weight
+        {
+            get { return weight; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Invalid Height. Enter an int greater than 0.");
+                }
+                this.weight = value;
+            }
+
+        }
 
         public Person(string fName, string lName, int age = 0, double height=0, double weight=0)
         {

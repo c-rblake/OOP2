@@ -1,9 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace OOP2
 {
+    public static class ListExtenstions
+    {
+        public static void AddMany<T>(this List<T> list, params T[] elements)
+        {
+            list.AddRange(elements);
+        }
+    }
     partial class Program
     {
         static void Main(string[] args)
@@ -60,32 +68,42 @@ namespace OOP2
             Console.WriteLine(handeler_pers.ToString());
             //handeler_pers.Age = -1;
 
+            
             Horse horse = new Horse("Zorro", 800, 8, "Galopp");
+            //3.2.7, Array med Animals kanske
+            var result = new StringBuilder();
+            result.AppendLine(horse.DoSound());
+            Console.WriteLine(result);
+
+            List<Animal>animals;
             Dog dog = new("Lassie", 50, 24, 8);
             Hedgehog hedgehog = new("Phil", 25, 5, "Waggle");
             Worm worm = new("Tjernobyl", 25, 38, true);
             Bird bird = new("Parrot", 12, 24, true);
             Wolf wolf = new("Fenrir",12,24,false);
-
-            //3.2.7, Array med Animals kanske
-            var result = new StringBuilder();
-            result.AppendLine(horse.DoSound());
-            Console.WriteLine(result);
-            //3.2.8
-
             Pelican pelican = new("Seaborn", 12, 24, true, false);
             Flamingo flamingo = new("Pink", 12, 24, true, false);
             Swan swan = new("Dive", 12, 24, true, true);
 
-            Wolfman wolfman = new Wolfman("Wolverine", 95, 130, true);
+            //animals.AddMany(dog, hedgehog, worm, bird, wolf, pelican, flamingo, swan);
+            var list = new List<Animal> { dog,  };
+            list.AddMany(hedgehog, worm, bird, wolf, pelican, flamingo, swan);
+            //3.2.8
+            foreach (var item in list)
+            {
+                Console.WriteLine(item.GetType().Name.ToString() + " " + item.DoSound()); 
+            }
 
+
+
+            Wolfman wolfman = new Wolfman("Wolverine", 95, 130, true);
             // F: 3.2.13 fåglar behöver ett nytt attribut - Bird.cs
             // F: 3.2.14 Alla djur - Animal.cs
-
             //Animal
-
             string cry = wolfman.Stats();
             Console.WriteLine(cry);
+
+            
 
 
 

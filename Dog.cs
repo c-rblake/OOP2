@@ -1,4 +1,6 @@
-﻿namespace OOP2
+﻿using System;
+
+namespace OOP2
 {
     internal class Dog : Animal
     {
@@ -14,6 +16,11 @@
         public override string DoSound()
         {
             return "WOFF!!!!";
+        }
+
+        public string GetString()
+        {
+            return "This is a DOG only Method";
         }
     }
 }

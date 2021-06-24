@@ -75,7 +75,7 @@ namespace OOP2
             result.AppendLine(horse.DoSound());
             Console.WriteLine(result);
 
-            List<Animal>animals;
+            
             Dog dog = new("Lassie", 50, 24, 8);
             Hedgehog hedgehog = new("Phil", 25, 5, "Waggle");
             Worm worm = new("Tjernobyl", 25, 38, true);
@@ -84,26 +84,77 @@ namespace OOP2
             Pelican pelican = new("Seaborn", 12, 24, true, false);
             Flamingo flamingo = new("Pink", 12, 24, true, false);
             Swan swan = new("Dive", 12, 24, true, true);
+            Wolfman wolfman = new Wolfman("Wolverine", 95, 130, true);
+            //string cry = wolfman.Stats();
+            //Console.WriteLine(cry);
 
-            //animals.AddMany(dog, hedgehog, worm, bird, wolf, pelican, flamingo, swan);
-            var list = new List<Animal> { dog,  };
-            list.AddMany(hedgehog, worm, bird, wolf, pelican, flamingo, swan);
+            var animals = new List<Animal> { dog,  };
+            animals.AddMany(hedgehog, worm, bird, wolf, pelican, flamingo, swan, wolfman);
             //3.2.8
-            foreach (var item in list)
+            foreach (var animal in animals)
             {
-                Console.WriteLine(item.GetType().Name.ToString() + " " + item.DoSound()); 
+
+                Console.WriteLine(animal.GetType().Name.ToString() + " " + animal.DoSound());
+                Console.WriteLine(animal.Stats());
+                
+                //if (animal is IPerson)
+                //   Person temp = (Person)animal;
+                //   Console.WriteLine(animal.Talk());
+
+                if (animal is Dog)
+                    Console.WriteLine("I AM A DOG\n");
+                    Console.WriteLine(dog.GetString());
+          
+            }
+
+            TextInputError textInputError = new();
+            NumericInputError numericInputError = new();
+
+            // 3.4.9
+            GremlinAteCpuError gremlinError = new();
+            CakeInKeyBoardError cakeError = new();
+            HotCoffeeInKeyBoardError coffeeError = new();
+
+            List<UserError> userErros = new List<UserError>() // add to list ; below.
+            {
+                textInputError, numericInputError, gremlinError, cakeError, coffeeError
+            };
+
+            Console.WriteLine();
+            foreach (var error in userErros)
+            {
+                Console.WriteLine(error.UEMessage());
             }
 
 
+            
 
-            Wolfman wolfman = new Wolfman("Wolverine", 95, 130, true);
+
+
+            //UserError userError = new();
+
+
+
+            //3.3.16
+            //Console.WriteLine(dog.GetString());
+            //Console.WriteLine(animals.GetString());
+
+
+
             // F: 3.2.13 fåglar behöver ett nytt attribut - Bird.cs
             // F: 3.2.14 Alla djur - Animal.cs
+            // F: 3.3.9 Häst i HundLista. Båda är Animal men häst är inte hund.
+            // F: 3.3.13 VAD HÄNDER?? 
+            /* Det går att göra overwrite men basklassen klarar olika typer med 
+             ett GetType call. WolfMan är undantaget. 
+            Den har också override och en annan return.
+            */
+            // F: 3.3.17 Dogs only. GetString är inte definierad i Animal 
+            // F: 3.3.17 Animals är en lista och har ingen GetString metod. 
             //Animal
-            string cry = wolfman.Stats();
-            Console.WriteLine(cry);
 
-            
+
+
 
 
 

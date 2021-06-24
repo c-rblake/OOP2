@@ -77,6 +77,17 @@ namespace OOP2
             Flamingo flamingo = new("Pink", 12, 24, true, false);
             Swan swan = new("Dive", 12, 24, true, true);
 
+            Wolfman wolfman = new Wolfman("Wolverine", 95, 130, true);
+
+            // F: 3.2.13 fåglar behöver ett nytt attribut - Bird.cs
+            // F: 3.2.14 Alla djur - Animal.cs
+
+            //Animal
+
+            string cry = wolfman.Stats();
+            Console.WriteLine(cry);
+
+
 
         }
     }

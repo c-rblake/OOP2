@@ -133,13 +133,9 @@ namespace OOP2
 
             //UserError userError = new();
 
-
-
             //3.3.16
             //Console.WriteLine(dog.GetString());
             //Console.WriteLine(animals.GetString());
-
-
 
             // F: 3.2.13 fåglar behöver ett nytt attribut - Bird.cs
             // F: 3.2.14 Alla djur - Animal.cs
@@ -152,6 +148,18 @@ namespace OOP2
             // F: 3.3.17 Dogs only. GetString är inte definierad i Animal 
             // F: 3.3.17 Animals är en lista och har ingen GetString metod. 
             //Animal
+
+            // F 3.4.11 Varför Polymorphism - Slipper samma kod om och om igen
+            // Det är också rätt händigt när man skriver, går lite fortare tillslut.
+            //F 3.4.12 Hur är det bättre - Man låser in beteenden som man måste ha
+            //Men man kan också lägga till egna. 
+            // Det är bra om man jobbar med andra eller sig själv i framtiden.
+            // Hur tänkte jag kring implmentation i Applikation X och Y.
+            //F 3.4.13 abstract class vs interface
+            //Interface har ALDRIG implmentering av kod. Den är som en ren placeholder 
+            //för en ide.
+            //Abstrakta klassen kan ha implmenteringar
+            //Klasser ÄRVER nedåt max ett arv per steg, Interface ärver som de vill.
 
 
 
